@@ -1,4 +1,4 @@
-w# User Registration Endpoint
+# User Registration Endpoint
 
 ## Endpoint: `/users/register`
 
