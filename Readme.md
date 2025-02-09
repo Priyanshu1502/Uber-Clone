@@ -32,3 +32,29 @@ Example:
   "password": "password123"
 }
 ```
+
+# User Login Endpoint
+
+## Endpoint: `/users/login`
+
+### Method: POST
+
+### Description:
+
+This endpoint is used to log in an existing user. It validates the input data, checks the user's credentials, and returns a JSON Web Token (JWT) along with the user data.
+
+### Request Body:
+
+The request body should be a JSON object with the following fields:
+
+- `email` (string, required, must be a valid email)
+- `password` (string, required, minimum length: 6)
+
+Example:
+
+```json
+{
+  "email": "john.doe@example.com",
+  "password": "password123"
+}
+```
