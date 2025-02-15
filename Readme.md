@@ -120,3 +120,47 @@ Required. Include the JWT token in the request header:
     "message": "Logged out successfully"
   }
   ```
+
+# Captain Registration Endpoint
+
+## Endpoint: `/captain/register`
+
+### Method: POST
+
+### Description:
+
+This endpoint is used to register a new captain. It validates the input data, hashes the captain's password, creates a new captain in the database, and returns a JSON Web Token (JWT) along with the captain data.
+
+### Request Body:
+
+The request body should be a JSON object with the following fields:
+
+- `fullname`: An object containing:
+  - `firstname` (string, required, minimum length: 3)
+  - `lastname` (string, optional, minimum length: 3)
+- `email` (string, required, must be a valid email)
+- `password` (string, required, minimum length: 6)
+- `vehicle`: An object containing:
+  - `color` (string, required, minimum length: 3)
+  - `plate` (string, required, minimum length: 3)
+  - `capacity` (number, required, minimum: 1)
+  - `vehicleType` (string, required, must be one of: "car", "motorcycle", "auto")
+
+Example:
+
+```json
+{
+  "fullname": {
+    "firstname": "John",
+    "lastname": "Doe"
+  },
+  "email": "john.doe@example.com",
+  "password": "password123",
+  "vehicle": {
+    "color": "red",
+    "plate": "ABC123",
+    "capacity": 4,
+    "vehicleType": "car"
+  }
+}
+```
